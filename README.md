@@ -11,4 +11,4 @@ base16, bin directories).
 
 1. Install [stow(8)](https://linux.die.net/man/8/stow) with your package manager of choice (apt, dnf, pacman, brew, nix, etc.)
 2. Clone this repo into your home folder `git clone git@github.com:kakig/dotfiles.git ~/.dotfiles`
-3. At the repo root, run `stow <dir>` to install the configuration files present in <dir>
+3. At the repo root, run `stow <dir>` to install the configuration files present in `<dir>`
