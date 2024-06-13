@@ -5,12 +5,12 @@ source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 # Try to detect and prevent those.
 # https://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
 if [ -z ${VIM+x} ]; then
-  dracula_pro="~/.dotfiles/private/base16/dracula-pro.sh"
-  kanagawa="~/.config/base16/kanagawa.sh"
-  if [ -f dracula_pro ]; then
-    source dracula_pro
-  elif [ -f kanagawa ]; then
-    source kanagawa
+  dracula_pro="$HOME/.dotfiles/private/base16/dracula-pro.sh"
+  kanagawa="$HOME/.config/base16/base16-kanagawa.sh"
+  if [ -f $dracula_pro ]; then
+    source $dracula_pro
+  elif [ -f $kanagawa ]; then
+    source $kanagawa
   fi
 fi
 

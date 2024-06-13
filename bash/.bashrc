@@ -16,13 +16,13 @@ HISTCONTROL=ignorespace
 alias ls='ls -v --color=auto'
 PS1='[\u@\h \W]\$ '
 
-dracula_pro = "~/.dotfiles/private/base16/dracula-pro.sh"
-kanagawa = "~/.config/base16/kanagawa.sh"
 # Base 16
-if [ -f dracula_pro ] then
-  source dracula_pro
-elif [ -f kanagawa ] then
-  source kanagawa
+dracula_pro="$HOME/.dotfiles/private/base16/dracula-pro.sh"
+kanagawa="$HOME/.config/base16/base16-kanagawa.sh"
+if [ -f $dracula_pro ]; then
+  source $dracula_pro
+elif [ -f $kanagawa ]; then
+  source $kanagawa
 fi
 
 # aliases
