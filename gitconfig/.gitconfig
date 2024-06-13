@@ -1,0 +1,9 @@
+[alias]
+	c = commit
+	s = status
+	d = diff
+	ph = push
+	pl = pull
+	l = log
+[init]
+	defaultBranch = main

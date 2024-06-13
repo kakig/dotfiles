@@ -1,0 +1,97 @@
+#!/usr/bin/env python
+
+import io
+import subprocess
+import sys
+
+import pandas as pd
+
+o = io.StringIO(
+    subprocess.check_output(["hledger", *sys.argv[1:], "-O", "csv"]).decode("utf-8")
+    # subprocess.check_output(["hledger", "bal", "Expenses", "-O", "csv"]).decode("utf-8")
+)
+df = pd.read_csv(o)
+
+# remove last line because it is just the total, not an account
+df = df.iloc[:-1, :]
+
+# convert balance column to int to avoid rounding errors
+df["balance"] = (
+    df["balance"].str.replace(" .*", "", regex=True).astype(float) * 100
+).astype(int)
+
+accounts_tree = dict()
+account_names = set()
+for _, (accounts_string, balance) in df.iterrows():
+    accs = accounts_string.split(":")
+    acc = accs[-1]
+    for acc in accs:
+        account_names.add(acc)
+    if len(accs) > 1:
+        parent_acc = accounts_tree
+        for i in range(len(accs) - 1):
+            if accs[i] not in parent_acc:
+                parent_acc[accs[i]] = dict()
+            parent_acc = parent_acc[accs[i]]
+        if accs[-1] not in parent_acc:
+            parent_acc[acc] = balance
+        else:
+            parent_acc[acc] += balance
+    else:
+        if acc not in accounts_tree:
+            accounts_tree[acc] = balance
+        else:
+            accounts_tree[acc] += balance
+
+account_totals = dict()
+for acc in account_names:
+    account_totals[acc] = 0
+
+
+def reduce_totals(tree):
+    total = 0
+    for account in tree:
+        if type(tree[account]) == int:
+            account_totals[account] += tree[account]
+            total += tree[account]
+        else:
+            partial = reduce_totals(tree[account])
+            total += partial
+            account_totals[account] += partial
+    return total
+
+root_account = sys.argv[2]
+account_totals[root_account] = reduce_totals(accounts_tree)
+
+account_percentages = dict()
+for acc in account_names:
+    account_percentages[acc] = 0
+
+
+def reduce_percentages(tree, parent):
+    for account in tree:
+        if parent is None:
+            account_percentages[account] = 1
+        else:
+            account_percentages[account] = (
+                account_totals[account] / account_totals[parent]
+            )
+        if type(tree[account]) != int:
+            reduce_percentages(tree[account], account)
+
+
+reduce_percentages(accounts_tree, None)
+
+
+def print_tree(tree, current_depth):
+    for account in tree:
+        spacing = " " * current_depth * 2
+        print(
+            f"{spacing}{account:<30}{spacing}{account_percentages[account] * 100:>6.2f}%{account_totals[account] / 100:>{25 - current_depth * 4}.2f}"
+        )
+        if type(tree[account]) != int:
+            print_tree(tree[account], current_depth + 1)
+
+
+print()
+print_tree(accounts_tree, 0)

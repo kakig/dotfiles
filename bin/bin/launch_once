@@ -1,0 +1,12 @@
+#!/bin/sh
+
+progname=$(echo "$@" | cut -d " " -f 1)
+
+# Terminate already running processes
+killall -q $progname
+
+# Wait until they exit cleanly
+while pgrep -u $UID -x $progname >/dev/null; do sleep 1; done
+
+# Launch
+$@

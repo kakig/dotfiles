@@ -1,0 +1,11 @@
+[Unit]
+Description=Delete all files in the user's Downloads directory
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/true
+ExecStop=/usr/bin/sh -c '/usr/bin/rm -rf %h/Downloads/*'
+
+[Install]
+WantedBy=default.target

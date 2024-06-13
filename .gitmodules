@@ -1,0 +1,6 @@
+[submodule "private"]
+	path = private
+	url = git@github.com:kakig/dotfiles-private
+[submodule "zsh/.config/zsh/powerlevel10k"]
+	path = zsh/.config/zsh/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k

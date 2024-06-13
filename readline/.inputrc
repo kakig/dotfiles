@@ -1,0 +1,6 @@
+# Press tab a single time to get all the completions
+set show-all-if-unmodified on
+set show-all-if-ambiguous on
+# Lisps
+set enable-bracketed-paste on
+set blink-matching-paren on
