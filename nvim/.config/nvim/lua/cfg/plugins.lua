@@ -87,6 +87,10 @@ local plugins = {
     'monkoose/matchparen.nvim',
     opts = {},
   },
+  {
+    'Shatur/neovim-session-manager',
+    opts = {},
+  },
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lsp-signature-help',

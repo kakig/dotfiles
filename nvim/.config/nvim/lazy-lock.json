@@ -17,6 +17,7 @@
   "lualine.nvim": { "branch": "master", "commit": "af4c3cf17206810880d2a93562e0a4c0d901c684" },
   "mason.nvim": { "branch": "main", "commit": "3b5068f0fc565f337d67a2d315d935f574848ee7" },
   "matchparen.nvim": { "branch": "main", "commit": "190861577d83167021dcb3339dd3aa594279f2f3" },
+  "neovim-session-manager": { "branch": "master", "commit": "29f80e9c6f3620b81908e287b3d1ed79c2290dd5" },
   "nvim-ack": { "branch": "main", "commit": "36c12be6514baddb5576e38d96371a7ddb84c55b" },
   "nvim-cmp": { "branch": "main", "commit": "04e0ca376d6abdbfc8b52180f8ea236cbfddf782" },
   "nvim-dap": { "branch": "master", "commit": "c1695e500c7d552a0a19953a9aefcc89178fb1af" },
