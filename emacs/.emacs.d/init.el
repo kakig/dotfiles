@@ -37,7 +37,6 @@
 
 ;; language support
 (use-package racket-mode)
-(use-package fennel-mode)
 
 ;; tree-sitter
 ;;(use-package tree-sitter)
