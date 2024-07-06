@@ -58,6 +58,7 @@ alias nvs='nvim --listen /tmp/nvim' # neovim socket
 alias rz='rizin'
 alias dark='gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark && gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
 alias light='gsettings set org.gnome.desktop.interface gtk-theme Adwaita && gsettings set org.gnome.desktop.interface color-scheme prefer-light'
+alias containerspace='docker run --rm -it --userns=keep-id --user $(id -u):$(id -g) -v .:/workspace dotneo'
 
 
 # Functions
