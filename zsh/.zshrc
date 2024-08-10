@@ -7,8 +7,11 @@ source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 if [ -z ${VIM+x} ]; then
   dracula_pro="$HOME/.dotfiles/private/base16/dracula-pro.sh"
   kanagawa="$HOME/.config/base16/base16-kanagawa.sh"
+  highc="$HOME/.config/base16/base16-highc.sh"
   if [ -f $dracula_pro ]; then
     source $dracula_pro
+  elif [ -f $highc ]; then
+    source $highc
   elif [ -f $kanagawa ]; then
     source $kanagawa
   fi
@@ -58,8 +61,6 @@ alias nvs='nvim --listen /tmp/nvim' # neovim socket
 alias rz='rizin'
 alias dark='gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark && gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
 alias light='gsettings set org.gnome.desktop.interface gtk-theme Adwaita && gsettings set org.gnome.desktop.interface color-scheme prefer-light'
-alias containerspace='docker run --rm -it --userns=keep-id --user $(id -u):$(id -g) -v .:/workspace dotneo'
-
 
 # Functions
 cdp() {
@@ -104,6 +105,10 @@ optr() {
   cwebp -resize 2000 0 -q 75 "$img_file" -o "$(basename "${img_file%.*}".webp)"
 }
 
+containerspace() {
+  docker run --rm -it --userns=keep-id --user $(id -u):$(id -g) -v .:/workspace:Z $@ dotneo
+}
+
 # Custom bindings
 bindkey -e # emacs bindings
 # fish word style, Ctrl-W stops at / for editing paths quickly
@@ -128,6 +133,7 @@ bindkey '\ee' edit-command-line
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 # Installed with pacman
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -141,7 +147,7 @@ typeset -U PATH
 autoload -Uz compinit
 compinit -d
 
-# replace cd with zoxide
+# replace cd with zoxide if available
 if type zoxide &>/dev/null; then
   eval "$(zoxide init zsh)"
   alias cd='z'
