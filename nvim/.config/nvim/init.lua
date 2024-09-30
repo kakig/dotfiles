@@ -24,21 +24,24 @@ vim.api.nvim_set_keymap('v', '<Space>', '<nop>', {})
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
+-- disable guicursor
+vim.o.guicursor = ''
+
 -- enable 24-bit rgb (truecolor) support when running in terminals
 vim.cmd('set termguicolors')
 
 -- load plugins and configurations
 require('cfg.plugins')
-require('cfg.nvim-lspconfig')
+pcall(require, 'cfg.nvim-lspconfig')
 pcall(require, 'cfg.nvim-treesitter')
 pcall(require, 'cfg.gitsigns')
-require('cfg.misc')
-require('cfg.nvim-cmp')
+pcall(require, 'cfg.misc')
+pcall(require, 'cfg.nvim-cmp')
 pcall(require, 'cfg.dap')
 pcall(require, 'cfg.aucmds')
 pcall(require, 'cfg.custom_keybindings')
 pcall(require, 'cfg.custom_opts')
-require("cfg.watch")
+pcall(require, 'cfg.watch')
 
 -- load local lua init for overriding configs
 if (vim.fn.filereadable('.nvim/init.lua') ~= 0) then
