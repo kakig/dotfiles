@@ -9,6 +9,10 @@ local inoremap = function(lhs, rhs)
   vim.api.nvim_set_keymap('i', lhs, rhs, {noremap = true})
 end
 
+nnoremap('<Leader>bs', '<Cmd>so%<CR>')
+nnoremap('<Leader>fw', '<Cmd>wa<CR>')
+nnoremap('<Leader>fs', '<Cmd>w<CR><Cmd>so%<CR>')
+
 -- swap : and ;
 nnoremap(':', ';')
 nnoremap(';', ':')
