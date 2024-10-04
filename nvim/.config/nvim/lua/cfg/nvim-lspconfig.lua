@@ -125,7 +125,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = {  'solargraph', 'gopls', 'clojure_lsp', 'tsserver', 'prismals', 'eslint', 'texlab', 'tailwindcss' }
+local servers = {  'solargraph', 'gopls', 'clojure_lsp', 'ts_ls', 'prismals', 'eslint', 'texlab', 'tailwindcss' }
 local enabled_servers = {}
 for _, server in ipairs(servers) do
   -- check if the actual executable (*NOT* the lspconfig server name) is
