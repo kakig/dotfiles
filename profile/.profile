@@ -25,6 +25,7 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # [[ "$PATH" =~ "$HOME/.rbenv/bin" ]] || PATH="$PATH:$HOME/.rbenv/bin"
 # [[ "$PATH" =~ "$HOME/.rbenv/shims" ]] || PATH="$PATH:$HOME/.rbenv/shims"
 [[ "$PATH" =~ "$HOME/.pub-cache/bin" ]] || PATH="$PATH:$HOME/.pub-cache/bin" # pub (dart-devtools cli)
+[[ "$PATH" =~ "$HOME/development/flutter/bin" ]] || PATH="$PATH:$HOME/development/flutter/bin"
 export PATH
 
 # Environment variables
