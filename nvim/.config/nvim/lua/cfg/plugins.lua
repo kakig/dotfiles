@@ -87,15 +87,15 @@ local plugins = {
     'monkoose/matchparen.nvim',
     opts = {},
   },
-  {
-    'Shatur/neovim-session-manager',
-    config = function()
-      local config = require('session_manager.config')
-      require('session_manager').setup({
-        autoload_mode = config.AutoloadMode.GitSession,
-      })
-    end
-  },
+  -- {
+  --   'Shatur/neovim-session-manager',
+  --   config = function()
+  --     local config = require('session_manager.config')
+  --     require('session_manager').setup({
+  --       autoload_mode = config.AutoloadMode.GitSession,
+  --     })
+  --   end
+  -- },
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lsp-signature-help',
