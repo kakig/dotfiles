@@ -4,11 +4,12 @@ local mux = wezterm.mux
 local config = {
   max_fps = 120,
   font = wezterm.font_with_fallback({
+    'Iosevka Nerd Font',
     'JetBrains Mono',
     'JetBrainsMono Nerd Font',
   }),
-  font_size = 12.0,
-  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+  font_size = 14.0,
+  -- harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
 
   colors = {
     cursor_fg = '#22212c',
