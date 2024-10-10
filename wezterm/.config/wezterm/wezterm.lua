@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local mux = wezterm.mux
 
 local config = {
-  max_fps = 120,
+  max_fps = 60,
   font = wezterm.font_with_fallback({
     'Iosevka Nerd Font',
     'JetBrains Mono',
