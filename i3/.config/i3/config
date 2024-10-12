@@ -238,8 +238,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 1%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 1%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1%
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 1%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%-
@@ -255,14 +255,15 @@ set $mode_launcher Launch: [f]irefox pa[v]ucontrol [e]xplorer [b]rave
 bindsym $mod+x mode "$mode_launcher"
 
 mode "$mode_launcher" {
-	bindsym n exec firefox , mode "default"
-	bindsym r exec rnote , mode "default"
-	bindsym f exec firefox-nightly , mode "default"
 	bindsym b exec brave , mode "default"
 	bindsym c exec google-chrome-stable , mode "default"
-	bindsym v exec pavucontrol , mode "default"
 	bindsym e exec nautilus --new-window , mode "default"
-	bindsym s exec code , mode "default"
+	bindsym f exec firefox-nightly , mode "default"
+	bindsym n exec firefox , mode "default"
+	bindsym o exec flatpak run md.obsidian.Obsidian , mode "default"
+	bindsym r exec rnote , mode "default"
+	bindsym s exec flatpak run com.spotify.Client , mode "default"
+	bindsym v exec code , mode "default"
 	bindsym w exec autowacom , mode "default"
 	bindsym z exec date "+%Y%m%d%H%M%S" | tr -d '\n' | xclip -selection clipboard , mode "default"
 
