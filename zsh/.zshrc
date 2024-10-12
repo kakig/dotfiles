@@ -70,6 +70,13 @@ cdp() {
   cd `echo "$items" | fzf`
 }
 
+cdw() {
+  items=$(
+    find ~/work -maxdepth 1 -mindepth 1 -type d
+  )
+  cd `echo "$items" | fzf`
+}
+
 mkcd() {
   mkdir -p $@ && cd $@
 }
@@ -103,6 +110,26 @@ optimize_image() {
 optr() {
   img_file="$@"
   cwebp -resize 2000 0 -q 75 "$img_file" -o "$(basename "${img_file%.*}".webp)"
+}
+
+nnn ()
+{
+    # Block nesting of nnn in subshells
+    [ "${NNNLVL:-0}" -eq 0 ] || {
+        echo "nnn is already running"
+        return
+    }
+
+    export NNN_TMPFILE="/tmp/nnn/.lastd"
+
+    # The command builtin allows one to alias nnn to n, if desired, without
+    # making an infinitely recursive alias
+    command nnn "$@"
+
+    [ ! -f "$NNN_TMPFILE" ] || {
+        . "$NNN_TMPFILE"
+        rm -f -- "$NNN_TMPFILE" > /dev/null
+    }
 }
 
 containerspace() {
