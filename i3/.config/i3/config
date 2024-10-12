@@ -199,7 +199,7 @@ bindsym $mod+n scratchpad show
 exec_always --no-startup-id xset m 0 0
 exec_always --no-startup-id xset r rate 200 50
 exec_always --no-startup-id setxkbmap -layout us -option -option compose:ralt,ctrl:swap_lalt_lctl
-exec_always --no-startup-id feh --bg-fill ~/Sync/wallpapers/alena-aenami-rooflinesgirl-1k-2.jpg
+exec_always --no-startup-id feh --bg-fill ~/Sync/wallpapers/alena-aenami-couple1k.jpg
 # exec --no-startup-id picom --backend glx --vsync --config=/dev/null -b
 # exec --no-startup-id megasync
 exec --no-startup-id ibus-daemon -drx
