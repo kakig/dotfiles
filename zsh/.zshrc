@@ -58,6 +58,7 @@ alias grt='cd $(git rev-parse --show-toplevel)' # quick cd to git project root
 alias n='nvim'
 alias nn='nvim -u NORC'
 alias nvs='nvim --listen /tmp/nvim' # neovim socket
+alias ndot='pushd && cd ~/.dotfiles && nvim . && popd'
 alias rz='rizin'
 alias dark='gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark && gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
 alias light='gsettings set org.gnome.desktop.interface gtk-theme Adwaita && gsettings set org.gnome.desktop.interface color-scheme prefer-light'
@@ -120,7 +121,7 @@ nnn ()
         return
     }
 
-    export NNN_TMPFILE="/tmp/nnn/.lastd"
+    export NNN_TMPFILE="/tmp/nnn.lastd"
 
     # The command builtin allows one to alias nnn to n, if desired, without
     # making an infinitely recursive alias
