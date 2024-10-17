@@ -25,7 +25,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
 -- disable guicursor
--- vim.o.guicursor = ''
+vim.o.guicursor = ''
 
 -- enable 24-bit rgb (truecolor) support when running in terminals
 vim.cmd('set termguicolors')
