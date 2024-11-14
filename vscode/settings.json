@@ -1,0 +1,108 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "hexeditor.columnWidth": 16,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono','Consolas'",
+    "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono','Consolas'",
+    "editor.fontLigatures": true,
+    "editor.renderWhitespace": "all",
+    "lldb.launch.initCommands": [
+        "settings set target.x86-disassembly-flavor intel"
+    ],
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen",
+        "-workbench.action.terminal.focusFind",
+        "-workbench.action.files.newUntitledFile"
+    ],
+    "explorer.confirmDelete": false,
+    "editor.cursorSurroundingLines": 64,
+    "workbench.colorTheme": "Dracula Pro",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "quarto": false,
+        "yaml": false
+    },
+    "explorer.confirmDragAndDrop": false,
+    "git.confirmSync": false,
+    "C_Cpp.clang_format_fallbackStyle": "",
+    "files.associations": {
+        "*.cppm": "cpp"
+    },
+    "settingsSync.keybindingsPerPlatform": false,
+    "makefile.configureOnOpen": false,
+    "clangd.restartAfterCrash": false,
+    "editor.quickSuggestionsDelay": 0,
+    "go.toolsManagement.autoUpdate": true,
+    "cmake.configureOnOpen": false,
+    "workbench.editorAssociations": {
+        "*.rt": "default"
+    },
+    "editor.suggestFontSize": 12,
+    "C_Cpp.intelliSenseUpdateDelay": 500,
+    "editor.suggest.preview": true,
+    "C_Cpp.intelliSenseMemoryLimit": 6144,
+    "cmake.copyCompileCommands": "${workspaceFolder}",
+    "settingsSync.ignoredSettings": [
+        "cmake.copyCompileCommands"
+    ],
+    "files.insertFinalNewline": true,
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "git.openRepositoryInParentFolders": "always",
+    "editor.renderFinalNewline": "off",
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "godot_tools.gdscript_lsp_server_port": 6005,
+    "git.enableSmartCommit": true,
+    "redhat.telemetry.enabled": true,
+    "java.imports.gradle.wrapper.checksums": [
+        {
+            "sha256": "2c23278a62dc9f96ab11bee897d9f53e6479d6419135e4560ce822a6431df5e5",
+            "allowed": true
+        }
+    ],
+    "lldb.suppressUpdateNotifications": true,
+    "extensions.ignoreRecommendations": true,
+    "github.gitProtocol": "ssh",
+    "remote.SSH.lockfilesInTmp": true,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.fontSize": 16,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "editor.fontVariations": false,
+    "editor.minimap.autohide": true,
+    "editor.minimap.showSlider": "always",
+    "editor.autoClosingOvertype": "always",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.automationProfile.linux": {},
+    "git.autofetch": true,
+    "editor.lineNumbers": "relative",
+    "editor.accessibilitySupport": "off",
+    "godotTools.lsp.serverPort": 6005,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid"
+}
