@@ -62,3 +62,6 @@ export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
 # Nix Single User (WSL2 compatible)
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 if [ -e $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then . ~/.nix-profile/etc/profile.d/hm-session-vars.sh; fi
+
+# Homebrew
+if [ -e /opt/homebrew/bin/brew ]; then eval $(/opt/homebrew/bin/brew shellenv); fi

@@ -45,10 +45,15 @@ PROMPT_EOL_MARK='' # disable annoying '%' character if the line breaks
 
 
 # Aliases
+if [[ `uname` != 'Darwin' ]]; then
+  alias la='ls -lAhQv --color=auto'
+  alias sl='ls -ltrQh'
+else
+  alias la='ls -lAhv --color=auto'
+  alias sl='ls -ltrh'
+fi
 alias ls='ls -v --color=auto'
 alias lh='ls -Av --color=auto'
-alias la='ls -lAhQv --color=auto'
-alias sl='ls -ltrQh'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 alias diff='diff --color=auto'
@@ -82,9 +87,11 @@ mkcd() {
   mkdir -p $@ && cd $@
 }
 
-open() {
-  xdg-open $@ &>/dev/null & disown
-}
+if [[ `uname` != 'Darwin' ]]; then
+  open() {
+    xdg-open $@ &>/dev/null & disown
+  }
+fi
 
 enable_pyenv() {
   if type pyenv &>/dev/null; then
@@ -163,17 +170,21 @@ bindkey '\ee' edit-command-line
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 [ -f "$HOME/.nix-profile/share/fzf/key-bindings.zsh" ] && source "$HOME/.nix-profile/share/fzf/key-bindings.zsh"
+[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ] && source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
 # Installed with pacman
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Installed with apt / dnf
 [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Installed with homebrew
+[ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # I can't stand problems with $PATH anymore
 typeset -U PATH
 
-autoload -Uz compinit
+autoload -Uz +X compinit
 compinit -d
 
 # replace cd with zoxide if available
