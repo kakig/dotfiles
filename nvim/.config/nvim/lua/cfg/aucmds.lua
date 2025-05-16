@@ -1,6 +1,6 @@
 -- Highlight every yank (including the ones made in visual mode)
 function highlight_on_yank()
-  require('vim.highlight').on_yank()
+  require('vim.hl').on_yank()
   return nil
 end
 
