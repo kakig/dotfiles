@@ -59,7 +59,6 @@ alias ip='ip -color=auto'
 alias diff='diff --color=auto'
 alias cl=clear
 alias rdir='ranger --choosedir=/tmp/.rangerdir && cd `cat /tmp/.rangerdir`'
-alias grt='cd $(git rev-parse --show-toplevel)' # quick cd to git project root
 alias n='nvim'
 alias nn='nvim -u NORC'
 alias nvs='nvim --listen /tmp/nvim' # neovim socket
@@ -67,6 +66,31 @@ alias ndot='pushd && cd ~/.dotfiles && nvim . && popd'
 alias rz='rizin'
 alias dark='gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark && gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
 alias light='gsettings set org.gnome.desktop.interface gtk-theme Adwaita && gsettings set org.gnome.desktop.interface color-scheme prefer-light'
+
+# OnlyGit
+alias g='git'
+alias gap='git add -p'
+alias gb='git branch'
+alias gbc='git branch --show-current'
+alias gc='git commit'
+alias gck='git checkout'
+alias gd='git diff'
+alias gl='git log'
+alias gm='git merge'
+alias gp='git pull'
+alias gph='git push'
+alias gr='git reset'
+alias grb='git rebase'
+alias grbi='git rebase --interactive'
+alias grc='git reset --soft HEAD~1' # git reset commit
+alias grh='git reset --hard'
+alias grho='git reset --hard "origin/$(git branch --show-current)"'
+alias grt='cd $(git rev-parse --show-toplevel)' # git root
+alias gs='git s'
+alias gst='git stash'
+alias gsw='git switch'
+alias gw='git worktree'
+alias gwa='git worktree add'
 
 # Functions
 cdp() {
