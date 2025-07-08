@@ -58,7 +58,7 @@ alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 alias diff='diff --color=auto'
 alias cl=clear
-alias rdir='ranger --choosedir=/tmp/.rangerdir && cd `cat /tmp/.rangerdir`'
+alias rdir='ranger --choosedir=/tmp/.rangerdir && cd `cat /tmp/.rangerdir` && cat /tmp/.rangerdir'
 alias n='nvim'
 alias nn='nvim -u NORC'
 alias nvs='nvim --listen /tmp/nvim' # neovim socket
