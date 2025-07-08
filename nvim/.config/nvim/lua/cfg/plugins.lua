@@ -33,7 +33,7 @@ local plugins = {
 
   'rebelot/kanagawa.nvim',
   { dir = '~/.dotfiles/private/dracula-pro-vim' },
-  { dir = '~/personal/nvim-test-plugin' },
+  -- { dir = '~/personal/nvim-test-plugin' },
   'hoob3rt/lualine.nvim',
   'kyazdani42/nvim-web-devicons',
   'kyazdani42/nvim-tree.lua',
