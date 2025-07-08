@@ -5,6 +5,12 @@ umask 027
 export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
+# poetry / pipx
+[[ "$PYTHONPATH" =~ "/Users/$USER/lib/python" ]] || PYTHONPATH="$PYTHONPATH:/Users/$USER/lib/python"
+
+# Homebrew
+if [ -e /opt/homebrew/bin/brew ]; then eval $(/opt/homebrew/bin/brew shellenv); fi
+
 # Custom paths
 #
 # The test [[ "$PATH" =~ "..." ]] tries to avoid repeated entries in the PATH
@@ -26,6 +32,7 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # [[ "$PATH" =~ "$HOME/.rbenv/shims" ]] || PATH="$PATH:$HOME/.rbenv/shims"
 [[ "$PATH" =~ "$HOME/.pub-cache/bin" ]] || PATH="$PATH:$HOME/.pub-cache/bin" # pub (dart-devtools cli)
 [[ "$PATH" =~ "$HOME/development/flutter/bin" ]] || PATH="$PATH:$HOME/development/flutter/bin"
+[[ "$PATH" =~ "$HOME/.docker/bin" ]] || PATH="$PATH:$HOME/.docker/bin"
 export PATH
 
 # Environment variables
@@ -62,6 +69,3 @@ export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
 # Nix Single User (WSL2 compatible)
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 if [ -e $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then . ~/.nix-profile/etc/profile.d/hm-session-vars.sh; fi
-
-# Homebrew
-if [ -e /opt/homebrew/bin/brew ]; then eval $(/opt/homebrew/bin/brew shellenv); fi
