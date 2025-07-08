@@ -7,3 +7,5 @@
 	l = log
 [init]
 	defaultBranch = main
+[diff]
+	algorithm = patience
