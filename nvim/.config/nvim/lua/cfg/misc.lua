@@ -34,7 +34,7 @@ require('nvim-tree').setup {
 -- MIT license, see LICENSE for more details.
 -- Credit itchyny, jackno (lightline)
 local colors = {
-  gray       = '#A5ACD9',
+  gray       = '#BFBFBF',
   lightgray  = '#E1E2E6',
   orange     = '#A86200',
   purple     = '#BD185A',
