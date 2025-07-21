@@ -9,7 +9,7 @@ local config = {
     'JetBrainsMono Nerd Font',
   }),
   font_size = 14.0,
-  -- harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
 
   colors = {
     cursor_fg = '#F5F5F5',
