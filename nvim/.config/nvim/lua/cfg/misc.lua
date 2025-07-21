@@ -37,12 +37,12 @@ local colors = {
   gray       = '#A5ACD9',
   lightgray  = '#E1E2E6',
   orange     = '#A86200',
-  purple     = '#1C00A8',
-  red        = '#A81C00',
-  yellow     = '#A8A800',
-  green      = '#0EA800',
-  white      = '#282A36',
-  black      = '#F8F8F2',
+  purple     = '#BD185A',
+  red        = '#CB3A2A',
+  yellow     = '#846E15',
+  green      = '#14710A',
+  white      = '#1F1F1F',
+  black      = '#F5F5F5',
 }
 
 local dracula_light_lualine = {
@@ -106,7 +106,7 @@ end
 
 require('lualine').setup {
   options = {
-    theme = "dracula",
+    theme = dracula_light_lualine,
     section_separators = {},
     component_separators = { right = '|' }
   },

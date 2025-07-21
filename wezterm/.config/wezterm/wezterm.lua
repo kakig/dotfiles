@@ -12,8 +12,8 @@ local config = {
   -- harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
 
   colors = {
-    cursor_fg = '#22212c',
-    cursor_bg = '#f8f8f2',
+    cursor_fg = '#F5F5F5',
+    cursor_bg = '#1F1F1F',
   },
 
   bold_brightens_ansi_colors = false,

@@ -1,8 +1,8 @@
 set cursorline
 try
-  colorscheme dracula_pro
+  colorscheme dracula_pro_alucard
 catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme kanagawa
+  colorscheme kanagawa-lotus
 endtry
 
 sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=
