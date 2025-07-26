@@ -21,6 +21,7 @@ if [ -e /opt/homebrew/bin/brew ]; then eval $(/opt/homebrew/bin/brew shellenv); 
 #
 [[ "$PATH" =~ "$HOME/.local/bin" ]] || PATH="$PATH:$HOME/.local/bin"
 [[ "$PATH" =~ "$HOME/bin" ]] || PATH="$PATH:$HOME/bin"
+[[ "$PATH" =~ "$HOME/.npm-packages/bin" ]] || PATH="$PATH:$HOME/.npm-packages/bin"
 [[ "$PATH" =~ "$HOME/.luarocks/bin" ]] || PATH="$PATH:$HOME/.luarocks/bin"
 [[ "$PATH" =~ "$HOME/go/bin" ]] || PATH="$PATH:$HOME/go/bin"
 [[ "$PATH" =~ "$HOME/.cargo/bin" ]] || PATH="$PATH:$HOME/.cargo/bin"
