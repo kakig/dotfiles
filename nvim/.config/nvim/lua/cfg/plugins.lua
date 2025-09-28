@@ -18,8 +18,23 @@ local plugins = {
   'nvim-treesitter/playground',
   'nvim-lua/plenary.nvim',
   'nvim-lua/popup.nvim',
-  'nvim-telescope/telescope.nvim',
-
+  {
+    'nvim-telescope/telescope.nvim',
+    opts = {
+      pickers = {
+        find_files = {
+          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+          hidden = true,
+        },
+        live_grep = {
+          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+          additional_args = function(_)
+            return { "--hidden" }
+          end,
+        },
+      },
+    },
+  },
   'tpope/vim-repeat',
   {
     'numToStr/Comment.nvim',
