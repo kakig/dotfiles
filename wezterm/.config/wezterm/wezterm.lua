@@ -4,7 +4,7 @@ local mux = wezterm.mux
 local config = {
   max_fps = 60,
   font = wezterm.font_with_fallback({
-    'Iosevka Nerd Font',
+    'MesloLGM Nerd Font',
     'JetBrains Mono',
     'JetBrainsMono Nerd Font',
   }),
