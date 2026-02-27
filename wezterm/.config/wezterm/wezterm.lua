@@ -1,6 +1,16 @@
 local wezterm = require 'wezterm'
 local mux = wezterm.mux
 
+local font_size = 14.0
+
+local is_darwin = function()
+  return wezterm.target_triple:find("darwin") ~= nil
+end
+
+if is_darwin() then
+  font_size = 18.0
+end
+
 local config = {
   max_fps = 60,
   font = wezterm.font_with_fallback({
@@ -8,7 +18,7 @@ local config = {
     'JetBrains Mono',
     'JetBrainsMono Nerd Font',
   }),
-  font_size = 14.0,
+  font_size = font_size,
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
 
   colors = {
