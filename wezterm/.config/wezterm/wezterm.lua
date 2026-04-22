@@ -27,7 +27,7 @@ local config = {
   },
 
   bold_brightens_ansi_colors = false,
-  front_end = 'OpenGL',
+  front_end = 'WebGpu',
   enable_tab_bar = false,
   enable_scroll_bar = false,
 
