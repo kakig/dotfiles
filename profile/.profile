@@ -58,6 +58,8 @@ export MANPAGER="less -R --use-color -Dd+y -Du+m" # Enable color in manpages
 export MANROFFOPT="-P -c"
 # Fix android emulators cli showing nothing
 export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
+# Git credential manager requires this to be set
+export GCM_CREDENTIAL_STORE="secretservice"
 
 # Setup ssh-agent
 # if ! pgrep -u "$USER" ssh-agent > /dev/null; then
