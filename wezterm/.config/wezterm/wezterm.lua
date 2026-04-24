@@ -14,6 +14,7 @@ end
 local config = {
   max_fps = 60,
   font = wezterm.font_with_fallback({
+    'Consoleet Terminus-18',
     'MesloLGM Nerd Font',
     'JetBrains Mono',
     'JetBrainsMono Nerd Font',
@@ -22,8 +23,8 @@ local config = {
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
 
   colors = {
-    cursor_fg = '#F5F5F5',
-    cursor_bg = '#1F1F1F',
+    cursor_fg = '#1F1F1F',
+    cursor_bg = '#F5F5F5',
   },
 
   bold_brightens_ansi_colors = false,
@@ -37,6 +38,9 @@ local config = {
     top = 0,
     bottom = 0,
   },
+
+  freetype_load_target = "Mono",
+  freetype_render_target = "Mono",
 }
 
 return config
