@@ -1,6 +1,6 @@
 set cursorline
 try
-  colorscheme dracula_pro_alucard
+  colorscheme dracula_pro
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme kanagawa-lotus
 endtry
