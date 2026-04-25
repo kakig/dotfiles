@@ -10,6 +10,7 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # Homebrew
 if [ -e /opt/homebrew/bin/brew ]; then eval $(/opt/homebrew/bin/brew shellenv); fi
+[[ "$PATH" =~ "/opt/homebrew/share/google-cloud-sdk/bin" ]] || PATH="$PATH:/opt/homebrew/share/google-cloud-sdk/bin"
 
 # Custom paths
 #
