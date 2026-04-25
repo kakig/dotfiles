@@ -182,7 +182,7 @@ containerspace() {
 # Custom bindings
 bindkey -e # emacs bindings
 # fish word style, Ctrl-W stops at / for editing paths quickly
-WORDCHARS='*?_[]~=&!#$%^(){}<>' 
+WORDCHARS='*?_[]~&!#$%^(){}<>'
 autoload -U select-word-style
 select-word-style normal
 # Fix some bindings like delete not working by default
