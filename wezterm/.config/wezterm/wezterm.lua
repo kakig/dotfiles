@@ -8,19 +8,22 @@ local is_darwin = function()
 end
 
 if is_darwin() then
-  font_size = 18.0
+  font_size = 16.0
 end
 
 local config = {
   max_fps = 60,
   font = wezterm.font_with_fallback({
-    'Consoleet Terminus-18',
-    'MesloLGM Nerd Font',
+    -- 'RobotoMono Nerd Font',
+    -- 'Consoleet Terminus-14',
+    -- 'MesloLGM Nerd Font',
+    -- {family = 'Iosevka Term', stretch='Expanded'},
     'JetBrains Mono',
     'JetBrainsMono Nerd Font',
   }),
   font_size = font_size,
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+  line_height = 0.95,
 
   colors = {
     cursor_fg = '#1F1F1F',
@@ -39,8 +42,8 @@ local config = {
     bottom = 0,
   },
 
-  freetype_load_target = "Mono",
-  freetype_render_target = "Mono",
+  -- freetype_load_target = "Mono",
+  -- freetype_render_target = "Mono",
 }
 
 return config
