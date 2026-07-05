@@ -44,6 +44,8 @@ local config = {
 
   -- freetype_load_target = "Mono",
   -- freetype_render_target = "Mono",
+
+  warn_about_missing_glyphs = false,
 }
 
 return config
