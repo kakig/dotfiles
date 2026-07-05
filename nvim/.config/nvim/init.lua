@@ -25,32 +25,23 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
 -- disable guicursor
-vim.o.guicursor = ''
+-- vim.o.guicursor = ''
 
--- enable 24-bit rgb (truecolor) support when running in terminals
+-- enable 24-bit rgb (truecolor) support in tui
 vim.cmd('set termguicolors')
 
 -- load plugins and configurations
-require('cfg.plugins')
-pcall(require, 'cfg.nvim-lspconfig')
-pcall(require, 'cfg.nvim-treesitter')
-pcall(require, 'cfg.gitsigns')
-pcall(require, 'cfg.misc')
-pcall(require, 'cfg.nvim-cmp')
-pcall(require, 'cfg.dap')
-pcall(require, 'cfg.aucmds')
-pcall(require, 'cfg.custom_keybindings')
-pcall(require, 'cfg.custom_opts')
-pcall(require, 'cfg.watch')
+require('cfg.lsp')
+require('cfg.misc')
+require('cfg.nvim-cmp')
+require('cfg.gitsigns')
+require('cfg.aucmds')
+require('cfg.custom_keybindings')
+require('cfg.custom_opts')
+require('cfg.watch')
 
--- load local lua init for overriding configs
-if (vim.fn.filereadable('.nvim/init.lua') ~= 0) then
-  vim.cmd('luafile .nvim/init.lua')
-end
--- linit = vim.api.nvim_create_augroup("LocalInitLua", {})
--- vim.api.nvim_create_autocmd({"DirChanged"}, {group = linit, pattern = "global", command = "lua if (vim.fn.filereadable('./init.lua')) then pcall(require, 'init') end", once = false})
--- vim.api.nvim_create_autocmd({"DirChanged"}, {group = linit, pattern = "tabpage", command = "lua if (vim.fn.filereadable('./init.lua')) then pcall(require, 'init') end", once = false})
--- vim.api.nvim_create_autocmd({"DirChanged"}, {group = linit, pattern = "window", command = "lua if (vim.fn.filereadable('./init.lua')) then pcall(require, 'init') end", once = false})
+require('nvim-ack').setup()
+require('guess-indent').setup()
 
 -- disable filetype indentation
 vim.cmd('filetype indent off')

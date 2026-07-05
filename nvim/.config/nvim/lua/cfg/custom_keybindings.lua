@@ -14,10 +14,10 @@ nnoremap('<Leader>fw', '<Cmd>wa<CR>')
 nnoremap('<Leader>fs', '<Cmd>w<CR><Cmd>so%<CR>')
 
 -- swap : and ;
-nnoremap(':', ';')
-nnoremap(';', ':')
-vnoremap(':', ';')
-vnoremap(';', ':')
+-- nnoremap(':', ';')
+-- nnoremap(';', ':')
+-- vnoremap(':', ';')
+-- vnoremap(';', ':')
 
 -- navigate between windows using alt
 nnoremap('<M-h>', '<C-w>h')

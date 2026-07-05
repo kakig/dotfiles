@@ -15,9 +15,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 cleanmsg = vim.api.nvim_create_augroup("CleanMessages", {})
 vim.api.nvim_create_autocmd({"CursorMoved"}, {group = cleanmsg, pattern = "*", command = "echo", once = false})
 
--- custom autocommands
-custom_aucmds = vim.api.nvim_create_augroup("CustomAucmds", {})
-vim.api.nvim_create_autocmd({"Filetype"}, {group = custom_aucmds, pattern = "*", command = "setlocal indentexpr=", once = false})
-vim.api.nvim_create_autocmd({"Filetype"}, {group = custom_aucmds, pattern = "*", command = "setlocal nosmartindent", once = false})
-vim.api.nvim_create_autocmd({"Filetype"}, {group = custom_aucmds, pattern = "*", command = "setlocal nocindent", once = false})
-vim.api.nvim_create_autocmd({"BufEnter"}, {group = custom_aucmds, pattern = "*", command = "setlocal formatoptions-=cro", once = false})
+-- disable automatic indentation everywhere
+disable_indent = vim.api.nvim_create_augroup("DisableIndent", {})
+vim.api.nvim_create_autocmd({"Filetype"}, {group = disable_indent, pattern = "*", command = "setlocal indentexpr=", once = false})
+vim.api.nvim_create_autocmd({"Filetype"}, {group = disable_indent, pattern = "*", command = "setlocal nosmartindent", once = false})
+vim.api.nvim_create_autocmd({"Filetype"}, {group = disable_indent, pattern = "*", command = "setlocal nocindent", once = false})
+vim.api.nvim_create_autocmd({"BufEnter"}, {group = disable_indent, pattern = "*", command = "setlocal formatoptions-=cro", once = false})
