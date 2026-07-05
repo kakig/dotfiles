@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local mux = wezterm.mux
 
-local font_size = 14.0
+local font_size = 12.0
 
 local is_darwin = function()
   return wezterm.target_triple:find("darwin") ~= nil
