@@ -14,16 +14,11 @@ end
 local config = {
   max_fps = 60,
   font = wezterm.font_with_fallback({
-    -- 'RobotoMono Nerd Font',
-    -- 'Consoleet Terminus-14',
-    -- 'MesloLGM Nerd Font',
-    -- {family = 'Iosevka Term', stretch='Expanded'},
     'JetBrains Mono',
     'JetBrainsMono Nerd Font',
   }),
   font_size = font_size,
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
-  line_height = 0.95,
 
   colors = {
     cursor_fg = '#1F1F1F',
