@@ -131,3 +131,50 @@ nnoremap <F2> :lua require('harpoon.ui').nav_file(2)<CR>
 nnoremap <F3> :lua require('harpoon.ui').nav_file(3)<CR>
 nnoremap <F4> :lua require('harpoon.ui').nav_file(4)<CR>
 ]]
+
+--- NvimTree
+vim.api.nvim_set_keymap('n', '<Leader>n', '<Cmd>NvimTreeToggle<CR>', {noremap = true})
+require('nvim-tree').setup {
+  disable_netrw = false,
+  hijack_netrw = false,
+  renderer = {
+    icons = {
+      glyphs = {
+        git = {
+          unstaged = '!',
+          staged = '+',
+          untracked = '?'
+        },
+      },
+    },
+  },
+  hijack_directories = {
+    enable = false,
+    auto_open = false,
+  },
+  view = {
+    signcolumn = "no"
+  },
+  filters = {
+    dotfiles = false,
+  },
+  update_focused_file = {
+    enable = true,
+  },
+}
+
+--- Telescope
+require('telescope').setup({
+  pickers = {
+    find_files = {
+      file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+      hidden = true,
+    },
+    live_grep = {
+      file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+      additional_args = function(_)
+        return { "--hidden" }
+      end,
+    },
+  },
+})
